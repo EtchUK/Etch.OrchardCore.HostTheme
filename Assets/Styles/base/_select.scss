@@ -1,0 +1,17 @@
+/* ==========================================================================
+   #SELECT
+   ========================================================================== */
+
+select {
+    display: block;
+    @include rem(padding, $form-element-padding-vertical $form-element-padding-horizontal);
+    width: auto;
+
+    @include themify($themes) {
+        border: $form-border-size solid themed('color.hint');
+    }
+
+    &:focus {           
+        @include focus-form-element;
+    }
+}

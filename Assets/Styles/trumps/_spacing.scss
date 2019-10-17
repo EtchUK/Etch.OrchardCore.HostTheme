@@ -1,0 +1,152 @@
+/* ==========================================================================
+   #SPACING
+   ========================================================================== */
+
+
+.margin {
+    &--bottom {
+        @include rem(margin-bottom, $spacing-default);
+    
+        &-large {
+            @include rem(margin-bottom, $spacing-large);
+        }
+
+        &-small {
+            @include rem(margin-bottom, $spacing-small);
+        }
+
+        &-none {
+            margin-bottom: 0;
+        }
+    }
+
+    &--left {
+        @include rem(margin-left, $spacing-default);
+    
+        &-large {
+            @include rem(margin-left, $spacing-large);
+        }
+
+        &-small {
+            @include rem(margin-left, $spacing-small);
+        }
+
+        &-none {
+            margin-left: 0;
+        }
+
+        &-auto {
+            margin-left: auto;
+        }
+    }
+
+    &--right {
+        @include rem(margin-right, $spacing-default);
+    
+        &-large {
+            @include rem(margin-right, $spacing-large);
+        }
+
+        &-small {
+            @include rem(margin-right, $spacing-small);
+        }
+
+        &-none {
+            margin-right: 0;
+        }
+
+        &-auto {
+            margin-right: auto;
+        }
+    }
+
+    &--top {
+        @include rem(margin-top, $spacing-default);
+    
+        &-large {
+            @include rem(margin-top, $spacing-large);
+        }
+
+        &-small {
+            @include rem(margin-top, $spacing-small);
+        }
+
+        &-none {
+            margin-top: 0;
+        }
+    }
+}
+
+.padding {
+    &--bottom {
+        @include rem(padding-bottom, $spacing-default);
+    
+        &-large {
+            @include rem(padding-bottom, $spacing-large);
+        }
+
+        &-small {
+            @include rem(padding-bottom, $spacing-small);
+        }
+
+        &-none {
+            padding-bottom: 0;
+        }
+    }
+
+    &--left {
+        @include rem(padding-left, $spacing-default);
+    
+        &-large {
+            @include rem(padding-left, $spacing-large);
+        }
+
+        &-small {
+            @include rem(padding-left, $spacing-small);
+        }
+
+        &-none {
+            padding-left: 0;
+        }
+
+        &-auto {
+            padding-left: auto;
+        }
+    }
+
+    &--right {
+        @include rem(padding-right, $spacing-default);
+    
+        &-large {
+            @include rem(padding-right, $spacing-large);
+        }
+
+        &-small {
+            @include rem(padding-right, $spacing-small);
+        }
+
+        &-none {
+            padding-right: 0;
+        }
+
+        &-auto {
+            padding-right: auto;
+        }
+    }
+
+    &--top {
+        @include rem(padding-top, $spacing-default);
+    
+        &-large {
+            @include rem(padding-top, $spacing-large);
+        }
+
+        &-small {
+            @include rem(padding-top, $spacing-small);
+        }
+
+        &-none {
+            padding-top: 0;
+        }
+    }
+}

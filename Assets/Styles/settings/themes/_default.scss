@@ -1,0 +1,59 @@
+/* ==========================================================================
+   #DEFAULTTHEME
+   ========================================================================== */
+
+/**
+ * Default theme for the studio site.
+ */
+
+$themes: map-merge(
+    (
+        'default': (
+            'color': (
+                'backgroundDark': #070f26,
+                'border': #ccc,
+                'brandPrimary': #3ce854,
+                'brandSecondary': #070f26,
+                'buttonDisabled': #ccc,
+                'hint': #6d6d6d,
+                'tableRowLight': #efefef,
+                'tableRowDark': #070f26,
+                'text': #070f26,
+                'validationError': #e20000,
+                'white': #fff
+            ),
+            'fontFamily': (
+                'default': ('Work Sans', sans-serif),
+                'heading': ('Manuale', sans-serif)
+            ),
+            'fontSize': (
+                'default': 1.6rem,
+                'defaultEM': 1.6em,
+                'small': 1.4rem,
+                'hero': 7rem,
+                'h1': 4rem,
+                'h2': 3rem,
+                'h3': 2rem,
+                'h4': 1.8rem,
+                'blockquote': 2rem,
+                'mobile': (
+                    'hero': 3.6rem,
+                    'h1': 3.6rem,
+                    'h2': 3.2rem,
+                    'h3': 2.4rem,
+                    'h4': 1.8rem
+                )
+            ),
+            'fontWeight': (
+                'default': 400,
+                'bold': 700
+            ),
+            'lineHeight': (
+                'default': 2.2rem,
+                'heading': 1.2,
+                'hero': 1.4
+            )
+        )
+    ),
+    $themes
+);

@@ -1,0 +1,94 @@
+/* ==========================================================================
+   #HEADER/DEFAULT
+   ========================================================================== */
+
+.header {
+    &__content {
+        @include content-gutter();
+        align-items: center;
+        display: flex;
+        flex-flow: row wrap;
+        margin: 0 auto;
+        @include rem(max-width, $content-width-wide);
+        @include rem(padding-bottom, $header-content-padding-top);
+        @include rem(padding-top, $header-content-padding-top);
+        position: relative;
+
+        @include bp-min-width($bp-desktop) {
+            align-items: flex-end;
+        }
+    }
+
+        &__logo {
+            @include rem(max-width, $header-logo-width-mobile);
+            margin-right: auto;
+            position: relative;
+            width: 100%;
+            z-index: $z-index-front;
+
+            @include bp-min-width($bp-tablet) {
+                @include rem(max-width, $header-logo-width);
+            }
+
+            img {
+                display: block;
+            }
+        }
+
+        &__nav-button {
+            align-items: center;
+            display: flex;
+            cursor: pointer;
+            position: relative;
+            z-index: $z-index-front;
+        
+            @include bp-min-width($bp-tablet) {
+                display: none;
+            }
+
+            &:before {
+                content: "";
+                height: $header-nav-button-height;
+                @include rem(margin-right, $header-nav-button-margin-right);
+                width: $header-nav-button-width;
+
+                background-image: url('../content/icon-menu.svg');
+                background-repeat: no-repeat;
+                background-size: 100%;
+            }
+        }
+
+        nav,
+        &__nav {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: $z-index-default;
+
+            background-color: $color-grey-1;
+            border-top-width: $mobile-nav-padding-top;
+            border-top-color: $color-white;
+            border-top-style: solid;
+
+            @include bp-min-width($bp-tablet) {
+                display: block;
+                padding-top: 0;
+                position: static;
+                height: auto;
+                width: auto;
+
+                background-color: transparent;
+                border-top: 0;
+            }
+        }
+}
+
+.is-nav-visible {
+    nav,
+    .header__nav {
+        display: block;
+    }
+}

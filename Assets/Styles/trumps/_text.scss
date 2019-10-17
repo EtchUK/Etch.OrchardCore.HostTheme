@@ -1,0 +1,101 @@
+/* ==========================================================================
+   #TEXT
+   ========================================================================== */
+
+/**
+ * Classes to style text in various different ways.
+ */
+   
+.font {
+    &--default {
+        @include themify($themes) {
+            font-family: themed('fontFamily.default');
+        }
+    }
+
+    &--heading {
+        @include themify($themes) {
+            font-family: themed('fontFamily.heading');
+        }
+    }
+}
+
+.text {
+    &--align {
+        &-left{ text-align: left; }
+        &-center{ text-align: center; }
+        &-right{ text-align: right; }
+    }
+
+    &--line-through { text-decoration: line-through; }
+    &--underline { text-decoration: underline; }
+    &--uppercase { text-transform: uppercase; }
+
+    &--size {
+        &-h1 { 
+            @include themify($themes) {
+                @include rem(font-size, themed('fontSize.mobile.h1'));
+                line-height: themed('lineHeight.heading');
+            }
+
+            @include bp-min-width($bp-desktop) {
+                @include themify($themes) {
+                    @include rem(font-size, themed('fontSize.mobile.h1'));
+                }
+            }
+        }
+
+        &-h2 { 
+            @include themify($themes) {
+                @include rem(font-size, themed('fontSize.mobile.h2'));
+                line-height: themed('lineHeight.heading');
+            }
+
+            @include bp-min-width($bp-desktop) {
+                @include themify($themes) {
+                    @include rem(font-size, themed('fontSize.mobile.h2'));
+                }
+            }
+        }
+
+        &-h3 { 
+            @include themify($themes) {
+                @include rem(font-size, themed('fontSize.mobile.h3'));
+                line-height: themed('lineHeight.heading');
+            }
+
+            @include bp-min-width($bp-desktop) {
+                @include themify($themes) {
+                    @include rem(font-size, themed('fontSize.mobile.h3'));
+                }
+            }
+        }
+
+        &-h4 {
+            @include themify($themes) {
+                @include rem(font-size, themed('fontSize.mobile.h4'));
+                line-height: themed('lineHeight.heading');
+            }
+
+            @include bp-min-width($bp-desktop) {
+                @include themify($themes) {
+                    @include rem(font-size, themed('fontSize.h4'));
+                }
+            }
+        }
+    }
+
+    &--weight {
+        &-bold {
+            @include themify($themes) {
+                font-weight: themed('fontWeight.bold');
+            }
+        }
+
+        &-normal {
+            @include themify($themes) {
+                font-weight: themed('fontWeight.default');
+            }
+        }
+    }
+}  

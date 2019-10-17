@@ -1,0 +1,28 @@
+/* ==========================================================================
+   #Etch.OrchardCore.HostTheme THEME
+   ========================================================================== */
+
+@import "settings/all";
+
+@import "settings/themes/default";
+
+@import "tools/all";
+
+/**
+* CSS reset provided by normalize.css 
+* https://necolas.github.io/normalize.css/
+*/
+
+@import "../../node_modules/normalize.css/normalize";
+@import "../../node_modules/lightgallery.js/src/sass/lightgallery";
+
+@import "generic/all";
+
+@import "layout/all";
+
+@import "base/all";
+
+@import "components/all";
+
+@import "trumps/all";
+   

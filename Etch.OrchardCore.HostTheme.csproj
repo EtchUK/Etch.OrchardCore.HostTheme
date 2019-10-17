@@ -1,0 +1,70 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+    <Version>0.1.0-rc1</Version>
+    <PackageId>Etch.OrchardCore.HostTheme</PackageId>
+    <Title>Host Theme</Title>
+    <Authors>Etch UK Ltd.</Authors>
+    <Description>Theme for host site.</Description>
+    <PackageTags>orchardcore</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="node_modules\**" />
+    <EmbeddedResource Remove="node_modules\**" />
+    <None Remove="node_modules\**" />
+    <PackageAssetFiles Remove="node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="BuildConfigs\**" />
+    <EmbeddedResource Remove="BuildConfigs\**" />
+    <None Remove="BuildConfigs\**" />
+    <PackageAssetFiles Remove="BuildConfigs\**" />
+    <Folder Include="BuildConfigs\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="PatternLibrary\**" />
+    <EmbeddedResource Remove="PatternLibrary\**" />
+    <None Remove="PatternLibrary\**" />
+    <PackageAssetFiles Remove="PatternLibrary\**" />
+    <Folder Include="PatternLibrary\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="azure-pipeline-stable.yml" />
+    <EmbeddedResource Remove=".gitignore"  />
+    <EmbeddedResource Remove="package.json" />
+    <EmbeddedResource Remove="package-lock.json" />
+    <EmbeddedResource Remove="prettierrc" />
+    <EmbeddedResource Remove="README.md" />
+    <EmbeddedResource Remove="azure-pipeline-prelease.yml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OrchardCore.DisplayManagement" Version="1.0.0-rc1-10004" />
+    <PackageReference Include="OrchardCore.Media" Version="1.0.0-rc1-10004" />
+    <PackageReference Include="OrchardCore.Menu" Version="1.0.0-rc1-10004" />
+    <PackageReference Include="OrchardCore.ResourceManagement" Version="1.0.0-rc1-10004" />
+    <PackageReference Include="OrchardCore.Theme.Targets" Version="1.0.0-rc1-10004" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <Target Name="BuildStaticAssets" AfterTargets="PreBuildEvent" Condition="'$(Configuration)' == 'Debug'">
+    <Exec Command="npm run bundle:dev" />
+  </Target>
+
+  <Target Name="BuildStaticAssetsForRelease" AfterTargets="PreBuildEvent" Condition="'$(Configuration)' == 'Release'">
+    <Exec Command="npm run build" />
+  </Target>
+</Project>

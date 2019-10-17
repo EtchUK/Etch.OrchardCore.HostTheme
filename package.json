@@ -1,0 +1,55 @@
+{
+    "name": "etch.orchardcore.hosttheme",
+    "version": "0.1.0-rc1",
+    "description": "Theme for host site.",
+    "author": "Etch UK Ltd.",
+    "scripts": {
+        "replace:patterns": "replace-in-file --configFile=./BuildConfigs/replace-config.js",
+        "copy:patterns": "copyfiles -u 2 \"PatternLibrary/dist/**/*\" \"wwwroot/patterns\"",
+        "build": "npm install --no-audit && npm run bundle:prod && npm run build:patterns && npm run copy:patterns",
+        "build:patterns": "fractal build",
+        "bundle:dev": "npm install && webpack --config ./BuildConfigs/webpack.config.dev.js -d",
+        "bundle:prod": "webpack --config ./BuildConfigs/webpack.config.prod.js -p",
+        "bundle:watch": "webpack --config ./BuildConfigs/webpack.config.dev.js -d --watch",
+        "develop": "concurrently \"npm run start:patterns\" \"npm run bundle:watch\"",
+        "start": "npm install && npm run develop",
+        "start:patterns": "fractal start --sync"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.4.0",
+        "@babel/preset-env": "^7.4.2",
+        "@frctl/fractal": "^1.1.7",
+        "@frctl/mandelbrot": "^1.2.1",
+        "autoprefixer": "^9.6.4",
+        "babel-loader": "^8.0.5",
+        "clean-webpack-plugin": "^2.0.1",
+        "concurrently": "^4.1.0",
+        "copy-webpack-plugin": "^5.0.3",
+        "copyfiles": "^2.1.0",
+        "css-loader": "^2.1.1",
+        "mini-css-extract-plugin": "^0.5.0",
+        "node-sass": "^4.11.0",
+        "npm-run-all": "^4.1.5",
+        "optimize-css-assets-webpack-plugin": "^5.0.3",
+        "postcss-loader": "^3.0.0",
+        "replace-in-file": "^4.1.0",
+        "sass-loader": "^7.1.0",
+        "ts-loader": "^6.2.0",
+        "tslint": "^5.20.0",
+        "tslint-loader": "^3.5.4",
+        "typescript": "^3.6.3",
+        "webpack": "^4.29.6",
+        "webpack-cli": "^3.3.0",
+        "webpack-fix-style-only-entries": "^0.2.1"
+    },
+    "dependencies": {
+        "core-js": "^3.2.1",
+        "lg-video.js": "^1.0.0",
+        "lightgallery.js": "^1.1.3",
+        "normalize.css": "^8.0.1",
+        "picturefill": "^3.0.3"
+    },
+    "fractal": {
+        "main": "./BuildConfigs/fractal.config.js"
+    }
+}

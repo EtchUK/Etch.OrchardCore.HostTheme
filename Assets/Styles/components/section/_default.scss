@@ -1,0 +1,25 @@
+/* ==========================================================================
+   #SECTION/DEFAULT
+   ========================================================================== */
+
+.section {
+    display: block;
+    position: relative;
+    padding-bottom: $section-vertical-padding-mobile;
+    padding-top: $section-vertical-padding-mobile;
+
+    overflow-x: hidden;
+
+    @include bp-min-width($bp-desktop) {
+        padding-bottom: $section-vertical-padding;
+        padding-top: $section-vertical-padding;
+    }
+}
+
+    .section__content {
+        @include content-gutter();
+        margin-left: auto;
+        margin-right: auto;
+        max-width: $content-width;
+        position: relative;
+    }

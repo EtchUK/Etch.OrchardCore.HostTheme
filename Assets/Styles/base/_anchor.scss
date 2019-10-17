@@ -1,0 +1,21 @@
+/* ==========================================================================
+   #ANCHOR
+   ========================================================================== */
+
+/**
+ * Base styling for anchor links. See component 'links' for modifying these further
+ */
+ 
+a {
+    @include active-states();
+
+    @include themify($themes) {
+        color: themed('color.brandPrimary');
+    
+    }
+    text-decoration: underline;
+
+    &:hover {
+        text-decoration: none;
+    }
+}

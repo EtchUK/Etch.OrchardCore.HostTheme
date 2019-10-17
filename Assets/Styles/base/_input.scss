@@ -1,0 +1,20 @@
+/* ==========================================================================
+   #INPUT
+   ========================================================================== */
+
+input {
+    display: block;
+    @include rem(padding, $form-element-padding-vertical $form-element-padding-horizontal);
+
+    @include themify($themes) {
+        border: $form-border-size solid themed('color.hint');
+    }
+
+    &:focus {
+        @include focus-form-element;
+    }
+
+    &[type=file] {
+        border: 0;
+    }
+}
