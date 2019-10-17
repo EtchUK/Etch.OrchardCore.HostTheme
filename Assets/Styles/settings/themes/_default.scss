@@ -10,6 +10,8 @@ $themes: map-merge(
     (
         'default': (
             'color': (
+                'backgroundBody': #e5e5e5,
+                'backgroundCard': #fff,
                 'backgroundDark': #070f26,
                 'border': #ccc,
                 'brandPrimary': #3ce854,
@@ -51,7 +53,8 @@ $themes: map-merge(
             'lineHeight': (
                 'default': 2.2rem,
                 'heading': 1.2,
-                'hero': 1.4
+                'hero': 1.4,
+                'label': 1.9rem
             )
         )
     ),
