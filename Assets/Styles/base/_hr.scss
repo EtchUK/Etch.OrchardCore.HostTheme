@@ -12,8 +12,12 @@ hr {
     height: 1px;
     margin-top: 0;
     margin-bottom: $spacing-default;
-    background: $color-grey;
     border: 0;
-    color: $color-grey;
     font-size: 0;
+ 
+    @include themify($themes) {
+        background-color: themed('color.hrule');
+
+        color: themed('color.hrule');
+    }
 }
