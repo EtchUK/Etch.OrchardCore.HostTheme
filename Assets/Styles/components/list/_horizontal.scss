@@ -9,3 +9,10 @@
 .list--horizontal-spaced {
     @include list-horizontal-spaced();
 }
+
+.list--horizontal-space-between {
+    @include list-reset();
+
+    display: flex;
+    justify-content: space-between;
+}

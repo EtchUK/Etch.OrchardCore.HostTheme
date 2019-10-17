@@ -1,0 +1,126 @@
+@using OrchardCore.Environment.Shell
+@using OrchardCore.Environment.Shell.Models
+
+@inject OrchardCore.Environment.Shell.IShellHost ShellHost
+
+@{
+    var tenants = ShellHost.GetAllSettings().OrderBy(s => s.Name);
+
+    var originalPathBase = Context.Features.Get<ShellContextFeature>().OriginalPathBase.ToString();
+}
+
+@functions {
+    public string GetTenantUrl(ShellSettings tenantShellSettings, string originalPathBase)
+    {
+        var requestHostInfo = Context.Request.Host;
+
+        var tenantUrlHost = tenantShellSettings.RequestUrlHost?.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries).FirstOrDefault() ?? requestHostInfo.Host;
+        if (requestHostInfo.Port.HasValue)
+        {
+            tenantUrlHost += ":" + requestHostInfo.Port;
+        }
+
+        var result = $"{Context.Request.Scheme}://{tenantUrlHost}{originalPathBase}";
+
+        if (!string.IsNullOrEmpty(tenantShellSettings.RequestUrlPrefix))
+        {
+            result += "/" + tenantShellSettings.RequestUrlPrefix;
+        }
+
+        return result;
+    }
+
+    string GetTenantHost(ShellSettings tenant)
+    {
+        if (string.IsNullOrEmpty(tenant.RequestUrlHost) && string.IsNullOrEmpty(tenant.RequestUrlPrefix))
+        {
+            return Context.Request.Host.ToString();
+        }
+
+        if (!string.IsNullOrEmpty(tenant.RequestUrlHost))
+        {
+            return tenant.RequestUrlHost;
+        }
+
+        return string.Format("{0}/{1}", Context.Request.Host.ToString(), tenant.RequestUrlPrefix);
+    }
+}
+
+<section class="section">
+    <div class="section__content">
+        <ul class="list--horizontal-space-between">
+            <li>
+                <h2 class="hint text--uppercase text--size-default font--default">@T["Tenants"]</h2>
+            </li>
+            <li class="hint text--uppercase">
+                <a asp-area="OrchardCore.Tenants" asp-controller="Admin" asp-action="Create" class="link--plain">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7 5V0H5V5H0V7H5V12H7V7H12V5H7Z" fill="#6D6D6D"/>
+                    </svg> @T["Add New"]
+                </a>
+            </li>
+        </ul>
+        <ul class="grid">
+            @foreach (var tenant in tenants)
+            {
+                <li class="grid__item">
+                    <div class="card">
+                        <h3 class="text--size-h1 margin--bottom-small">@tenant.Name</h3>
+                        <p class="hint margin--bottom-large">@GetTenantHost(tenant)</p>
+
+                        @switch (tenant.State)
+                        {
+                            case TenantState.Disabled:
+                                <div class="badge badge--disabled">@T["Disabled"]</div>
+                                break;
+                            case TenantState.Initializing:
+                                <div class="badge badge--initialising">@T["Initializing"]</div>
+                                break;
+                            case TenantState.Invalid:
+                                <div class="badge badge--invalid">@T["Invalid"]</div>
+                                break;
+                            case TenantState.Running:
+                                <div class="badge badge--running">@T["Running"]</div>
+                                break;
+                            case TenantState.Uninitialized:
+                                <div class="badge badge--uninitialised">@T["Uninitialized"]</div>
+                                break;
+                        }
+
+                    <ul class="list list--horizontal list--horizontal-spaced">
+                        @if (tenant.State == TenantState.Running) {
+                            <li>
+                                <a href="@GetTenantUrl(tenant, originalPathBase)" class="link--plain">@T["View"]</a>
+                            </li>
+                        }
+
+                        <li>
+                            <a asp-area="OrchardCore.Tenants" asp-controller="Admin" asp-action="Edit" asp-route-id="@tenant.Name" class="link--plain">@T["Edit"]</a>
+                        </li>
+                        @if (tenant.Name != "Default" && tenant.State == TenantState.Running)
+                        {
+                            <li>
+                                <a asp-area="OrchardCore.Tenants" asp-controller="Admin" asp-action="Disable" asp-route-id="@tenant.Name" class="link--plain">@T["Disable"]</a>
+                            </li>
+                        }
+                        @if (tenant.State == TenantState.Disabled)
+                        {
+                            <li>
+                                <a asp-area="OrchardCore.Tenants" asp-controller="Admin" asp-action="Enable" asp-route-id="@tenant.Name" class="link--plain">@T["Enable"]</a>
+                            </li>
+                        }
+                        @if (tenant.State == TenantState.Uninitialized)
+                        {
+                            <li>
+                                <a href="@GetTenantUrl(tenant, originalPathBase)" class="link--plain">@T["Setup"]</a>
+                            </li>
+                        }
+
+                        <li><a asp-area="OrchardCore.Tenants" asp-controller="Admin" asp-action="Reload" asp-route-id="@tenant.Name" class="link--plain">@T["Reload"]</a></li>
+                    </ul>
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
+</section>

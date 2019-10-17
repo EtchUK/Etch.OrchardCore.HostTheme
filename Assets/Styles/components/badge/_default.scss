@@ -1,0 +1,49 @@
+/* ==========================================================================
+   #BADGE/DEFAULT
+   ========================================================================== */
+
+.badge {
+    display: inline-block;
+    @include rem(margin-bottom, $spacing-default);
+    @include rem(padding-bottom, $badge-padding-vertical);
+    @include rem(padding-left, $badge-padding-horizontal);
+    @include rem(padding-right, $badge-padding-horizontal);
+    @include rem(padding-top, $badge-padding-vertical);
+    
+    text-align: center;
+    text-transform: uppercase;
+
+    @include themify($themes) {
+        color: themed('color.white');
+    }
+}
+
+.badge--disabled {
+    @include themify($themes) {
+        background-color: themed('color.badgeDisabled');
+    }
+}
+
+.badge--initialising {
+    @include themify($themes) {
+        background-color: themed('color.badgeInitialising');
+    }
+}
+
+.badge--invalid {
+    @include themify($themes) {
+        background-color: themed('color.badgeInvalid');
+    }
+}
+
+.badge--running {
+    @include themify($themes) {
+        background-color: themed('color.badgeRunning');
+    }
+}
+
+.badge--uninitialised {
+    @include themify($themes) {
+        background-color: themed('color.badgeUninitialised');
+    }
+}

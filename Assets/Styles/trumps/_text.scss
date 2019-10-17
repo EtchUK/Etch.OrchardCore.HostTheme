@@ -30,8 +30,26 @@
     &--line-through { text-decoration: line-through; }
     &--underline { text-decoration: underline; }
     &--uppercase { text-transform: uppercase; }
+    &--ellipsis {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
 
     &--size {
+        &-default {
+            @include themify($themes) {
+                @include rem(font-size, themed('fontSize.default'));
+                line-height: themed('lineHeight.default');
+            }
+
+            @include bp-min-width($bp-desktop) {
+                @include themify($themes) {
+                    @include rem(font-size, themed('fontSize.default'));
+                }
+            }
+        }
+
         &-h1 { 
             @include themify($themes) {
                 @include rem(font-size, themed('fontSize.mobile.h1'));
