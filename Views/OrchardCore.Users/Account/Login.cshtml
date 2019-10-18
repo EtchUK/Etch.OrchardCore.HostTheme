@@ -17,11 +17,10 @@
     var loginProviders = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
 
     var returnUrl = Context.Request.Query.ContainsKey("returnUrl") ? (string)Context.Request.Query["returnUrl"] : string.Empty;
-    var title = returnUrl.ToLower().EndsWith("admin") ? T["Admin Area"] : T["Exhibitor Area"];
-
-    RenderTitleSegments(title);
 
     var currentThemeName = await SiteThemeService.GetCurrentThemeNameAsync();
+
+    RenderTitleSegments(T["Login"]);
 }
 
 <section class="section section--form-solo">
