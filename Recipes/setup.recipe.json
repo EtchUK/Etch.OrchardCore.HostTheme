@@ -548,6 +548,15 @@
             "LoginSettings": {
                 "UseSiteTheme": true
             }
+        },
+        {
+            "name": "media",
+            "Files": [
+                {
+                    "SourcePath": "Logo/logo-play.svg",
+                    "TargetPath": "Logo/logo-play.svg"
+                }
+            ]
         }
     ]
 }
