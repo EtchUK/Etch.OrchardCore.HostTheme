@@ -10,7 +10,7 @@
 }
 
 @functions {
-    public string GetTenantUrl(ShellSettings tenantShellSettings, string originalPathBase)
+    public string GetTenantUrl(ShellSettings tenantShellSettings, string originalPathBase, bool appendAdminArea = false)
     {
         var requestHostInfo = Context.Request.Host;
 
@@ -25,6 +25,11 @@
         if (!string.IsNullOrEmpty(tenantShellSettings.RequestUrlPrefix))
         {
             result += "/" + tenantShellSettings.RequestUrlPrefix;
+        }
+
+        if (appendAdminArea)
+        {
+            result += "/admin";
         }
 
         return result;
@@ -88,9 +93,13 @@
                         }
 
                     <ul class="list list--horizontal list--horizontal-spaced">
-                        @if (tenant.State == TenantState.Running) {
+                        @if (tenant.State == TenantState.Running)
+                        {
                             <li>
                                 <a href="@GetTenantUrl(tenant, originalPathBase)" class="link--plain">@T["View"]</a>
+                            </li>
+                            <li>
+                                <a href="@GetTenantUrl(tenant, originalPathBase, true)" class="link--plain">@T["Admin"]</a>
                             </li>
                         }
 
