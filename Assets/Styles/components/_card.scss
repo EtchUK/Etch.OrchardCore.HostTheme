@@ -18,6 +18,13 @@
         background-color: themed('color.backgroundCard');
     }
 
+    &__title {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%;
+    }
+
     &__body {
         @include rem(padding-top, $content-gutter-small);
     }
