@@ -8,555 +8,564 @@
     "issetuprecipe": true,
     "categories": ["default"],
     "tags": ["developer", "default"],
-    "steps": [
+  "steps": [
+    {
+      "name": "Feature",
+      "enable": [
+        "Application.Default",
+        "Etch.OrchardCore.SiteBoilerplate",
+        "OrchardCore.Liquid",
+        "OrchardCore.Settings",
+        "OrchardCore.Contents",
+        "OrchardCore.ContentTypes",
+        "OrchardCore.Media",
+        "Etch.OrchardCore.Fields.ResponsiveMedia",
+        "OrchardCore.ContentFields",
+        "OrchardCore.Title",
+        "OrchardCore.Widgets",
+        "OrchardCore.Flows",
+        "OrchardCore.Html",
+        "Etch.OrchardCore.Widgets",
+        "OrchardCore.Scripting",
+        "OrchardCore.Resources",
+        "OrchardCore.Admin",
+        "OrchardCore.Autoroute",
+        "OrchardCore.Localization",
+        "OrchardCore.Deployment",
+        "OrchardCore.Diagnostics",
+        "OrchardCore.DynamicCache",
+        "OrchardCore.Features",
+        "OrchardCore.HomeRoute",
+        "OrchardCore.Layers",
+        "OrchardCore.Navigation",
+        "OrchardCore.Users",
+        "OrchardCore.Recipes",
+        "OrchardCore.Roles",
+        "OrchardCore.Tenants",
+        "OrchardCore.Themes",
+        "Etch.OrchardCore.HostTheme",
+        "TheAdmin"
+      ],
+      "disable": [
+        "Etch.OrchardCore.Blocks",
+        "Etch.OrchardCore.Blocks.EditorJS",
+        "Etch.OrchardCore.ContextualEdit",
+        "Etch.OrchardCore.Fields.Dictionary",
+        "Etch.OrchardCore.Fields.Eventbrite",
+        "Etch.OrchardCore.Fields.MultiSelect",
+        "OrchardCore.Alias",
+        "Etch.OrchardCore.Fields.RenderAlias",
+        "Etch.OrchardCore.Fields.Values",
+        "Etch.OrchardCore.Gallery",
+        "Etch.OrchardCore.InjectScripts",
+        "OrchardCore.Taxonomies",
+        "Etch.OrchardCore.News",
+        "Etch.OrchardCore.SEO.HostnameRedirects",
+        "Etch.OrchardCore.SEO.MetaTags",
+        "Etch.OrchardCore.SEO.Redirects",
+        "Etch.OrchardCore.SEO.Redirects.Import",
+        "Etch.OrchardCore.SEO.RobotsTxt",
+        "OrchardCore.Workflows",
+        "Etch.OrchardCore.Workflows.Export",
+        "Etch.OrchardCore.Workflows.FormOutput",
+        "OrchardCore.Email",
+        "OrchardCore.Templates",
+        "Etch.OrchardCore.Workflows.TemplateEmail",
+        "OrchardCore.Forms",
+        "Etch.OrchardCore.Workflows.Validation",
+        "OrchardCore.AdminMenu",
+        "OrchardCore.Apis.GraphQL",
+        "OrchardCore.BackgroundTasks",
+        "OrchardCore.ContentFields.Indexing.SQL",
+        "OrchardCore.ContentLocalization",
+        "OrchardCore.ContentLocalization.ContentCulturePicker",
+        "OrchardCore.ContentPreview",
+        "OrchardCore.Contents.FileContentDefinition",
+        "OrchardCore.CustomSettings",
+        "OrchardCore.DataProtection.Azure",
+        "OrchardCore.Deployment.Remote",
+        "OrchardCore.Facebook",
+        "OrchardCore.Facebook.Login",
+        "OrchardCore.Facebook.Widgets",
+        "OrchardCore.Feeds",
+        "OrchardCore.GitHub.Authentication",
+        "OrchardCore.Google.Analytics",
+        "OrchardCore.Google.GoogleAuthentication",
+        "OrchardCore.HealthChecks",
+        "OrchardCore.Https",
+        "OrchardCore.Indexing",
+        "OrchardCore.Lists",
+        "OrchardCore.Lucene",
+        "OrchardCore.Lucene.ContentPicker",
+        "OrchardCore.Lucene.Worker",
+        "OrchardCore.Markdown",
+        "OrchardCore.Media.Cache",
+        "OrchardCore.Media.Azure.Storage",
+        "OrchardCore.Menu",
+        "OrchardCore.Microsoft.Authentication.AzureAD",
+        "OrchardCore.Microsoft.Authentication.MicrosoftAccount",
+        "OrchardCore.MiniProfiler",
+        "OrchardCore.OpenId",
+        "OrchardCore.OpenId.Client",
+        "OrchardCore.OpenId.Management",
+        "OrchardCore.OpenId.Server",
+        "OrchardCore.OpenId.Validation",
+        "OrchardCore.Queries",
+        "OrchardCore.Queries.Sql",
+        "OrchardCore.ReCaptcha",
+        "OrchardCore.ReCaptcha.Users",
+        "OrchardCore.XmlRpc",
+        "OrchardCore.RemotePublishing",
+        "OrchardCore.ResponseCompression",
+        "OrchardCore.ReverseProxy",
+        "OrchardCore.Setup",
+        "OrchardCore.Tenants.FileProvider",
+        "OrchardCore.Twitter",
+        "OrchardCore.Twitter.Signin",
+        "OrchardCore.Users.Registration",
+        "OrchardCore.Users.ResetPassword",
+        "OrchardCore.Users.TimeZone",
+        "OrchardCore.Workflows.Http",
+        "OrchardCore.Workflows.Timers",
+        "Etch.OrchardCore.DefaultTheme",
+        "SafeMode",
+        "TheAgencyTheme",
+        "TheBlogTheme",
+        "TheComingSoonTheme",
+        "TheTheme"
+      ]
+    },
+    {
+      "name": "Themes",
+      "Site": "Etch.OrchardCore.HostTheme",
+      "Admin": "TheAdmin"
+    },
+    {
+      "name": "Layers",
+      "Layers": [
         {
-            "name": "Feature",
-            "enable": [
-                "Application.Default",
-                "Etch.OrchardCore.SiteBoilerplate",
-                "OrchardCore.Liquid",
-                "OrchardCore.Settings",
-                "OrchardCore.Contents",
-                "OrchardCore.ContentTypes",
-                "OrchardCore.Media",
-                "Etch.OrchardCore.Fields.ResponsiveMedia",
-                "OrchardCore.ContentFields",
-                "OrchardCore.Title",
-                "OrchardCore.Widgets",
-                "OrchardCore.Flows",
-                "OrchardCore.Html",
-                "Etch.OrchardCore.Widgets",
-                "OrchardCore.Scripting",
-                "OrchardCore.Resources",
-                "OrchardCore.Admin",
-                "OrchardCore.Autoroute",
-                "OrchardCore.Localization",
-                "OrchardCore.Deployment",
-                "OrchardCore.Diagnostics",
-                "OrchardCore.DynamicCache",
-                "OrchardCore.Features",
-                "OrchardCore.HomeRoute",
-                "OrchardCore.Layers",
-                "OrchardCore.Navigation",
-                "OrchardCore.Users",
-                "OrchardCore.Recipes",
-                "OrchardCore.Roles",
-                "OrchardCore.Tenants",
-                "OrchardCore.Themes",
-                "Etch.OrchardCore.HostTheme",
-                "TheAdmin"
-            ],
-            "disable": [
-                "Etch.OrchardCore.Blocks",
-                "Etch.OrchardCore.Blocks.EditorJS",
-                "Etch.OrchardCore.ContextualEdit",
-                "Etch.OrchardCore.Fields.Dictionary",
-                "Etch.OrchardCore.Fields.Eventbrite",
-                "Etch.OrchardCore.Fields.MultiSelect",
-                "OrchardCore.Alias",
-                "Etch.OrchardCore.Fields.RenderAlias",
-                "Etch.OrchardCore.Fields.Values",
-                "Etch.OrchardCore.Gallery",
-                "Etch.OrchardCore.InjectScripts",
-                "OrchardCore.Taxonomies",
-                "Etch.OrchardCore.News",
-                "Etch.OrchardCore.SEO.HostnameRedirects",
-                "Etch.OrchardCore.SEO.MetaTags",
-                "Etch.OrchardCore.SEO.Redirects",
-                "Etch.OrchardCore.SEO.Redirects.Import",
-                "Etch.OrchardCore.SEO.RobotsTxt",
-                "OrchardCore.Workflows",
-                "Etch.OrchardCore.Workflows.Export",
-                "Etch.OrchardCore.Workflows.FormOutput",
-                "OrchardCore.Email",
-                "OrchardCore.Templates",
-                "Etch.OrchardCore.Workflows.TemplateEmail",
-                "OrchardCore.Forms",
-                "Etch.OrchardCore.Workflows.Validation",
-                "OrchardCore.AdminMenu",
-                "OrchardCore.Apis.GraphQL",
-                "OrchardCore.BackgroundTasks",
-                "OrchardCore.ContentFields.Indexing.SQL",
-                "OrchardCore.ContentLocalization",
-                "OrchardCore.ContentLocalization.ContentCulturePicker",
-                "OrchardCore.ContentPreview",
-                "OrchardCore.Contents.FileContentDefinition",
-                "OrchardCore.CustomSettings",
-                "OrchardCore.DataProtection.Azure",
-                "OrchardCore.Deployment.Remote",
-                "OrchardCore.Facebook",
-                "OrchardCore.Facebook.Login",
-                "OrchardCore.Facebook.Widgets",
-                "OrchardCore.Feeds",
-                "OrchardCore.GitHub.Authentication",
-                "OrchardCore.Google.Analytics",
-                "OrchardCore.Google.GoogleAuthentication",
-                "OrchardCore.HealthChecks",
-                "OrchardCore.Https",
-                "OrchardCore.Indexing",
-                "OrchardCore.Lists",
-                "OrchardCore.Lucene",
-                "OrchardCore.Lucene.ContentPicker",
-                "OrchardCore.Lucene.Worker",
-                "OrchardCore.Markdown",
-                "OrchardCore.Media.Cache",
-                "OrchardCore.Media.Azure.Storage",
-                "OrchardCore.Menu",
-                "OrchardCore.Microsoft.Authentication.AzureAD",
-                "OrchardCore.Microsoft.Authentication.MicrosoftAccount",
-                "OrchardCore.MiniProfiler",
-                "OrchardCore.OpenId",
-                "OrchardCore.OpenId.Client",
-                "OrchardCore.OpenId.Management",
-                "OrchardCore.OpenId.Server",
-                "OrchardCore.OpenId.Validation",
-                "OrchardCore.Queries",
-                "OrchardCore.Queries.Sql",
-                "OrchardCore.ReCaptcha",
-                "OrchardCore.ReCaptcha.Users",
-                "OrchardCore.XmlRpc",
-                "OrchardCore.RemotePublishing",
-                "OrchardCore.ResponseCompression",
-                "OrchardCore.ReverseProxy",
-                "OrchardCore.Setup",
-                "OrchardCore.Tenants.FileProvider",
-                "OrchardCore.Twitter",
-                "OrchardCore.Twitter.Signin",
-                "OrchardCore.Users.Registration",
-                "OrchardCore.Users.ResetPassword",
-                "OrchardCore.Users.TimeZone",
-                "OrchardCore.Workflows.Http",
-                "OrchardCore.Workflows.Timers",
-                "Etch.OrchardCore.DefaultTheme",
-                "SafeMode",
-                "TheAgencyTheme",
-                "TheBlogTheme",
-                "TheComingSoonTheme",
-                "TheTheme"
-            ]
+          "Name": "Default",
+          "Rule": "true",
+          "Description": "Widgets show on all pages."
         },
         {
-            "name": "Themes",
-            "Site": "Etch.OrchardCore.HostTheme",
-            "Admin": "TheAdmin"
-        },
-        {
-            "name": "Layers",
-            "Layers": [
-                {
-                    "Name": "Default",
-                    "Rule": "true",
-                    "Description": "Widgets show on all pages."
-                },
-                {
-                    "Name": "Authenticated",
-                    "Rule": "isAuthenticated()",
-                    "Description": "Widgets only show when user has logged in."
-                }
-            ]
-        },
-        {
-            "name": "Settings",
-            "LayerSettings": {
-                "Zones": ["Header", "Footer"]
-            }
-        },
-        {
-            "name": "ContentDefinition",
-            "ContentTypes": [
-                {
-                    "Name": "Page",
-                    "DisplayName": "Page",
-                    "Settings": {
-                        "ContentTypeSettings": {
-                            "Creatable": true,
-                            "Listable": true,
-                            "Draftable": true,
-                            "Versionable": true,
-                            "Securable": true
-                        },
-                        "FullTextAspectSettings": {}
-                    },
-                    "ContentTypePartDefinitionRecords": [
-                        {
-                            "PartName": "Page",
-                            "Name": "Page",
-                            "Settings": {
-                                "ContentTypePartSettings": {
-                                    "Position": "3"
-                                }
-                            }
-                        },
-                        {
-                            "PartName": "AutoroutePart",
-                            "Name": "AutoroutePart",
-                            "Settings": {
-                                "ContentTypePartSettings": {
-                                    "Position": "1"
-                                },
-                                "AutoroutePartSettings": {
-                                    "AllowCustomPath": true,
-                                    "Pattern": "{{ ContentItem | display_text | slugify }}",
-                                    "ShowHomepageOption": true
-                                }
-                            }
-                        },
-                        {
-                            "PartName": "TitlePart",
-                            "Name": "TitlePart",
-                            "Settings": {
-                                "ContentTypePartSettings": {
-                                    "Position": "0"
-                                }
-                            }
-                        },
-                        {
-                            "PartName": "BagPart",
-                            "Name": "Content",
-                            "Settings": {
-                                "ContentTypePartSettings": {
-                                    "DisplayName": "Content",
-                                    "Description": "Content for the page.",
-                                    "Position": "2"
-                                },
-                                "BagPartSettings": {
-                                    "ContainedContentTypes": [
-                                        "Hero",
-                                        "Html",
-                                        "Section",
-                                        "Tenants"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "Name": "Title",
-                    "DisplayName": "Title",
-                    "Settings": {
-                        "ContentTypeSettings": {
-                            "Versionable": true,
-                            "Stereotype": "Widget"
-                        },
-                        "FullTextAspectSettings": {}
-                    },
-                    "ContentTypePartDefinitionRecords": [
-                        {
-                            "PartName": "Title",
-                            "Name": "Title",
-                            "Settings": {
-                                "ContentTypePartSettings": {
-                                    "Position": "0"
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "Name": "Section",
-                    "DisplayName": "Section",
-                    "Settings": {
-                        "ContentTypeSettings": {
-                            "Creatable": false,
-                            "Draftable": false,
-                            "Versionable": false,
-                            "Listable": false,
-                            "Securable": false,
-                            "Stereotype": "Widget"
-                        }
-                    },
-                    "ContentTypePartDefinitionRecords": [
-                        {
-                            "PartName": "Section",
-                            "Name": "Section",
-                            "Settings": {
-                                "ContentTypePartSettings": {
-                                    "Position": "1"
-                                }
-                            }
-                        },
-                        {
-                            "PartName": "BagPart",
-                            "Name": "Children",
-                            "Settings": {
-                                "ContentTypePartSettings": {
-                                    "DisplayName": "Children",
-                                    "Description": "Elements displayed within the section.",
-                                    "Position": "2"
-                                },
-                                "BagPartSettings": {
-                                    "ContainedContentTypes": [
-                                        "Blockquote",
-                                        "Card",
-                                        "Embed",
-                                        "Figure",
-                                        "Heading",
-                                        "Html",
-                                        "Image",
-                                        "Link",
-                                        "OrderedList",
-                                        "Paragraph",
-                                        "Text",
-                                        "Title",
-                                        "UnorderedList"
-                                    ],
-                                    "DisplayType": "Detail"
-                                },
-                                "ContentIndexSettings": {}
-                            }
-                        },
-                        {
-                            "PartName": "TitlePart",
-                            "Name": "TitlePart",
-                            "Settings": {
-                                "ContentTypePartSettings": {
-                                    "Position": "0"
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "Name": "Tenants",
-                    "DisplayName": "Tenants",
-                    "Settings": {
-                        "ContentTypeSettings": {
-                            "Versionable": true,
-                            "Stereotype": "Widget"
-                        },
-                        "FullTextAspectSettings": {}
-                    },
-                    "ContentTypePartDefinitionRecords": [
-                        {
-                            "PartName": "Tenants",
-                            "Name": "Tenants",
-                            "Settings": {
-                                "ContentTypePartSettings": {
-                                    "Position": "1"
-                                }
-                            }
-                        },
-                        {
-                            "PartName": "TitlePart",
-                            "Name": "TitlePart",
-                            "Settings": {
-                                "ContentTypePartSettings": {
-                                    "Position": "0"
-                                }
-                            }
-                        }
-                    ]
-                }
-            ],
-            "ContentParts": [
-                {
-                    "Name": "Title",
-                    "Settings": {},
-                    "ContentPartFieldDefinitionRecords": [
-                        {
-                            "FieldName": "TextField",
-                            "Name": "Heading",
-                            "Settings": {
-                                "ContentPartFieldSettings": {
-                                    "DisplayName": "Heading"
-                                }
-                            }
-                        },
-                        {
-                            "FieldName": "TextField",
-                            "Name": "Meta",
-                            "Settings": {
-                                "ContentPartFieldSettings": {
-                                    "DisplayName": "Meta"
-                                }
-                            }
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "content",
-            "data": [
-                {
-                    "ContentItemId": "49jqf879npr1ns9zn21199fhn9",
-                    "ContentItemVersionId": "4aqygjh9p5d0t5tc80rgcg5ywm",
-                    "ContentType": "Banner",
-                    "DisplayText": "Banner",
-                    "Latest": true,
-                    "Published": true,
-                    "ModifiedUtc": "2019-10-17T22:25:04.8542255Z",
-                    "PublishedUtc": "2019-10-17T22:25:04.8633317Z",
-                    "CreatedUtc": "2019-10-17T22:25:04.8633317Z",
-                    "Owner": "[js: parameters('AdminUsername')]",
-                    "Author": "[js: parameters('AdminUsername')]",
-                    "Banner": {
-                        "Logo": {
-                            "Paths": ["Logo/logo-play.svg"]
-                        },
-                        "LogoSmall": {
-                            "Paths": ["Logo/logo-play.svg"]
-                        },
-                        "LogoAlternateText": {
-                            "Text": "Logo for Etch Play"
-                        },
-                        "Menu": {
-                            "ContentItemIds": []
-                        },
-                        "MenuToggleButtonLabel": {
-                            "Text": null
-                        }
-                    },
-                    "LayerMetadata": {
-                        "Position": 1.0,
-                        "Zone": "Header",
-                        "Layer": "Authenticated"
-                    }
-                },
-                {
-                    "ContentItemId": "491q6cadt39zjv80y5vwcsdwwv",
-                    "ContentItemVersionId": "4477kj481besd7hhzddc9rs95t",
-                    "ContentType": "Page",
-                    "DisplayText": "Welcome",
-                    "Latest": true,
-                    "Published": true,
-                    "ModifiedUtc": "2019-10-17T22:31:45.0030887Z",
-                    "PublishedUtc": "2019-10-17T22:31:45.1158212Z",
-                    "CreatedUtc": "2019-10-10T15:43:07.5565987Z",
-                    "Owner": "[js: parameters('AdminUsername')]",
-                    "Author": "[js: parameters('AdminUsername')]",
-                    "Page": {},
-                    "LiquidPart": {
-                        "Liquid": "<section class=\"section\">\r\n  <div class=\"section__content\">\r\n    <p>{{ \"Your site has been successfully set up.\" | t }}</p>\r\n  </div>\r\n</section>\r\n"
-                    },
-                    "AutoroutePart": {
-                        "Path": "home",
-                        "SetHomepage": true
-                    },
-                    "TitlePart": {
-                        "Title": "Welcome"
-                    },
-                    "Content": {
-                        "ContentItems": [
-                            {
-                                "ContentItemId": "40erk98vfspz7z252g0nq96mds",
-                                "ContentItemVersionId": null,
-                                "ContentType": "Section",
-                                "DisplayText": "Header",
-                                "Latest": false,
-                                "Published": false,
-                                "ModifiedUtc": "2019-10-17T22:31:45.0943083Z",
-                                "PublishedUtc": null,
-                                "CreatedUtc": null,
-                                "Owner": null,
-                                "Author": "[js: parameters('AdminUsername')]",
-                                "Section": {
-                                    "BackgroundColour": {
-                                        "Text": "default"
-                                    },
-                                    "Alignment": {
-                                        "Text": "default"
-                                    }
-                                },
-                                "Children": {
-                                    "ContentItems": [
-                                        {
-                                            "ContentItemId": "4qmtp5a66yx7pt9dx8ftyzrb56",
-                                            "ContentItemVersionId": null,
-                                            "ContentType": "Title",
-                                            "DisplayText": null,
-                                            "Latest": false,
-                                            "Published": false,
-                                            "ModifiedUtc": "2019-10-17T22:31:45.1011724Z",
-                                            "PublishedUtc": null,
-                                            "CreatedUtc": null,
-                                            "Owner": null,
-                                            "Author": "[js: parameters('AdminUsername')]",
-                                            "Title": {
-                                                "Heading": {
-                                                    "Text": "PlayCMS"
-                                                },
-                                                "Meta": {
-                                                    "Text": "powered by Orchard Core"
-                                                }
-                                            }
-                                        }
-                                    ]
-                                },
-                                "TitlePart": {
-                                    "Title": "Header"
-                                }
-                            },
-                            {
-                                "ContentItemId": "4x9wyydwbm1v6wqede6s4ftbns",
-                                "ContentItemVersionId": null,
-                                "ContentType": "Tenants",
-                                "DisplayText": "Tenants",
-                                "Latest": false,
-                                "Published": false,
-                                "ModifiedUtc": "2019-10-17T22:31:45.1091238Z",
-                                "PublishedUtc": null,
-                                "CreatedUtc": null,
-                                "Owner": null,
-                                "Author": "[js: parameters('AdminUsername')]",
-                                "Tenants": {},
-                                "TitlePart": {
-                                    "Title": "Tenants"
-                                }
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        {
-            "name": "Roles",
-            "Roles": [
-                {
-                    "Name": "Anonymous",
-                    "Permissions": []
-                },
-                {
-                    "Name": "Administrator",
-                    "Permissions": [
-                        "ManageSettings",
-                        "AccessAdminPanel",
-                        "ManageCultures",
-                        "ManageUsers",
-                        "ManageRoles",
-                        "AssignRoles",
-                        "SiteOwner",
-                        "ManageTenants",
-                        "ApplyTheme",
-                        "PublishContent",
-                        "EditContent",
-                        "DeleteContent",
-                        "PreviewContent",
-                        "CloneContent",
-                        "ViewContentTypes",
-                        "EditContentTypes",
-                        "SetHomepage",
-                        "Import",
-                        "Export"
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "Settings",
-            "LoginSettings": {
-                "UseSiteTheme": true
-            }
-        },
-        {
-            "name": "media",
-            "Files": [
-                {
-                    "SourcePath": "Logo/logo-play.svg",
-                    "TargetPath": "Logo/logo-play.svg"
-                }
-            ]
+          "Name": "Authenticated",
+          "Rule": "isAuthenticated()",
+          "Description": "Widgets only show when user has logged in."
         }
-    ]
+      ]
+    },
+    {
+      "name": "Settings",
+      "LayerSettings": {
+        "Zones": [ "Header", "Footer" ]
+      }
+    },
+    {
+      "name": "ContentDefinition",
+      "ContentTypes": [
+        {
+          "Name": "Page",
+          "DisplayName": "Page",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Creatable": true,
+              "Listable": true,
+              "Draftable": true,
+              "Versionable": true,
+              "Securable": true
+            },
+            "FullTextAspectSettings": {}
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Page",
+              "Name": "Page",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "3"
+                }
+              }
+            },
+            {
+              "PartName": "AutoroutePart",
+              "Name": "AutoroutePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                },
+                "AutoroutePartSettings": {
+                  "AllowCustomPath": true,
+                  "Pattern": "{{ ContentItem | display_text | slugify }}",
+                  "ShowHomepageOption": true
+                }
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "BagPart",
+              "Name": "Content",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "DisplayName": "Content",
+                  "Description": "Content for the page.",
+                  "Position": "2"
+                },
+                "BagPartSettings": {
+                  "ContainedContentTypes": [
+                    "Hero",
+                    "Html",
+                    "Section",
+                    "Tenants"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Title",
+          "DisplayName": "Title",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Versionable": true,
+              "Stereotype": "Widget"
+            },
+            "FullTextAspectSettings": {}
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Title",
+              "Name": "Title",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Section",
+          "DisplayName": "Section",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Creatable": false,
+              "Draftable": false,
+              "Versionable": false,
+              "Listable": false,
+              "Securable": false,
+              "Stereotype": "Widget"
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Section",
+              "Name": "Section",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                }
+              }
+            },
+            {
+              "PartName": "BagPart",
+              "Name": "Children",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "DisplayName": "Children",
+                  "Description": "Elements displayed within the section.",
+                  "Position": "2"
+                },
+                "BagPartSettings": {
+                  "ContainedContentTypes": [
+                    "Blockquote",
+                    "Card",
+                    "Embed",
+                    "Figure",
+                    "Heading",
+                    "Html",
+                    "Image",
+                    "Link",
+                    "OrderedList",
+                    "Paragraph",
+                    "Text",
+                    "Title",
+                    "UnorderedList"
+                  ],
+                  "DisplayType": "Detail"
+                },
+                "ContentIndexSettings": {}
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Tenants",
+          "DisplayName": "Tenants",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Versionable": true,
+              "Stereotype": "Widget"
+            },
+            "FullTextAspectSettings": {}
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Tenants",
+              "Name": "Tenants",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                }
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "ContentParts": [
+        {
+          "Name": "Title",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "TextField",
+              "Name": "Heading",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Heading"
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Meta",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Meta"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "content",
+      "data": [
+        {
+          "ContentItemId": "49jqf879npr1ns9zn21199fhn9",
+          "ContentItemVersionId": "4aqygjh9p5d0t5tc80rgcg5ywm",
+          "ContentType": "Banner",
+          "DisplayText": "Banner",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2019-10-17T22:25:04.8542255Z",
+          "PublishedUtc": "2019-10-17T22:25:04.8633317Z",
+          "CreatedUtc": "2019-10-17T22:25:04.8633317Z",
+          "Owner": "[js: parameters('AdminUsername')]",
+          "Author": "[js: parameters('AdminUsername')]",
+          "Banner": {
+            "Logo": {
+              "Paths": [ "Logo/logo-play.svg" ]
+            },
+            "LogoSmall": {
+              "Paths": [ "Logo/logo-play.svg" ]
+            },
+            "LogoAlternateText": {
+              "Text": "Logo for Etch Play"
+            },
+            "Menu": {
+              "ContentItemIds": []
+            },
+            "MenuToggleButtonLabel": {
+              "Text": null
+            }
+          },
+          "LayerMetadata": {
+            "Position": 1.0,
+            "Zone": "Header",
+            "Layer": "Authenticated"
+          }
+        },
+        {
+          "ContentItemId": "491q6cadt39zjv80y5vwcsdwwv",
+          "ContentItemVersionId": "4477kj481besd7hhzddc9rs95t",
+          "ContentType": "Page",
+          "DisplayText": "Welcome",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2019-10-17T22:31:45.0030887Z",
+          "PublishedUtc": "2019-10-17T22:31:45.1158212Z",
+          "CreatedUtc": "2019-10-10T15:43:07.5565987Z",
+          "Owner": "[js: parameters('AdminUsername')]",
+          "Author": "[js: parameters('AdminUsername')]",
+          "Page": {},
+          "LiquidPart": {
+            "Liquid": "<section class=\"section\">\r\n  <div class=\"section__content\">\r\n    <p>{{ \"Your site has been successfully set up.\" | t }}</p>\r\n  </div>\r\n</section>\r\n"
+          },
+          "AutoroutePart": {
+            "Path": "home",
+            "SetHomepage": true
+          },
+          "TitlePart": {
+            "Title": "Welcome"
+          },
+          "Content": {
+            "ContentItems": [
+              {
+                "ContentItemId": "40erk98vfspz7z252g0nq96mds",
+                "ContentItemVersionId": null,
+                "ContentType": "Section",
+                "DisplayText": "Header",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2019-10-17T22:31:45.0943083Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "[js: parameters('AdminUsername')]",
+                "Section": {
+                  "BackgroundColour": {
+                    "Text": "default"
+                  },
+                  "Alignment": {
+                    "Text": "default"
+                  }
+                },
+                "Children": {
+                  "ContentItems": [
+                    {
+                      "ContentItemId": "4qmtp5a66yx7pt9dx8ftyzrb56",
+                      "ContentItemVersionId": null,
+                      "ContentType": "Title",
+                      "DisplayText": null,
+                      "Latest": false,
+                      "Published": false,
+                      "ModifiedUtc": "2019-10-17T22:31:45.1011724Z",
+                      "PublishedUtc": null,
+                      "CreatedUtc": null,
+                      "Owner": null,
+                      "Author": "[js: parameters('AdminUsername')]",
+                      "Title": {
+                        "Heading": {
+                          "Text": "PlayCMS"
+                        },
+                        "Meta": {
+                          "Text": "powered by Orchard Core"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "TitlePart": {
+                  "Title": "Header"
+                }
+              },
+              {
+                "ContentItemId": "4x9wyydwbm1v6wqede6s4ftbns",
+                "ContentItemVersionId": null,
+                "ContentType": "Tenants",
+                "DisplayText": "Tenants",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2019-10-17T22:31:45.1091238Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "[js: parameters('AdminUsername')]",
+                "Tenants": {},
+                "TitlePart": {
+                  "Title": "Tenants"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Roles",
+      "Roles": [
+        {
+          "Name": "Anonymous",
+          "Permissions": []
+        },
+        {
+          "Name": "Administrator",
+          "Permissions": [
+            "ManageSettings",
+            "AccessAdminPanel",
+            "ManageCultures",
+            "ManageUsers",
+            "ManageRoles",
+            "AssignRoles",
+            "SiteOwner",
+            "ManageTenants",
+            "ApplyTheme",
+            "PublishContent",
+            "EditContent",
+            "DeleteContent",
+            "PreviewContent",
+            "CloneContent",
+            "ViewContentTypes",
+            "EditContentTypes",
+            "SetHomepage",
+            "Import",
+            "Export"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Settings",
+      "LoginSettings": {
+        "UseSiteTheme": true
+      }
+    },
+    {
+      "name": "media",
+      "Files": [
+        {
+          "SourcePath": "Logo/logo-play.svg",
+          "TargetPath": "Logo/logo-play.svg"
+        }
+      ]
+    },
+    {
+      "name": "recipes",
+      "Values": [
+        {
+          "executionid": "Etch.OrchardCore.Widgets",
+          "name": "Create Content Definitions"
+        }
+      ]
+    }
+  ]
 }
