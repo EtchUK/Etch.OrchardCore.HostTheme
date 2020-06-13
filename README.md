@@ -8,7 +8,7 @@ Theme for [Orchard Core](https://github.com/orchardcms/OrchardCore) to be used o
 
 ## Orchard Core Reference
 
-This module is referencing the RC1 build of Orchard Core ([`1.0.0-rc1-10004`](https://www.nuget.org/packages/OrchardCore.Theme.Targets/1.0.0-rc1-10004)).
+This module is referencing the RC2 build of Orchard Core ([`1.0.0-rc2-13450`](https://www.nuget.org/packages/OrchardCore.Theme.Targets/1.0.0-rc2-13450)).
 
 ## Installing
 
