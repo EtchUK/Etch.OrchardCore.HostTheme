@@ -1,6 +1,6 @@
 {
     "name": "etch.orchardcore.hosttheme",
-    "version": "0.1.1-rc1",
+    "version": "0.2.0-rc2",
     "description": "Theme for host site.",
     "author": "Etch UK Ltd.",
     "scripts": {
