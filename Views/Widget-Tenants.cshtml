@@ -71,7 +71,7 @@
                 <li class="grid__item">
                     <div class="card">
                         <h3 class="card__title text--size-h1 margin--bottom-small" title="@tenant.Name">@tenant.Name</h3>
-                        <p class="hint margin--bottom-large">@GetTenantHost(tenant)</p>
+                        <p class="hint text--ellipsis margin--bottom-large"><span title="@GetTenantHost(tenant)">@GetTenantHost(tenant)</span></p>
 
                         @switch (tenant.State)
                         {
