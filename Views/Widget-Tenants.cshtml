@@ -1,6 +1,10 @@
+@using Microsoft.AspNetCore.DataProtection
+@using Microsoft.AspNetCore.Http
 @using OrchardCore.Environment.Shell
 @using OrchardCore.Environment.Shell.Models
 
+@inject OrchardCore.Modules.IClock Clock
+@inject Microsoft.AspNetCore.DataProtection.IDataProtectionProvider  DataProtectionProvider
 @inject OrchardCore.Environment.Shell.IShellHost ShellHost
 
 @{
@@ -10,6 +14,22 @@
 }
 
 @functions {
+    public string GetTenantSetupUrl(ShellSettings tenantShellSettings, string originalPathBase)
+    {
+        var url = GetTenantUrl(tenantShellSettings, originalPathBase);
+        var dataProtector = DataProtectionProvider.CreateProtector("Tokens").ToTimeLimitedDataProtector();
+        var token = dataProtector.Protect(tenantShellSettings["Secret"], Clock.UtcNow.Add(new TimeSpan(24, 0, 0)));
+
+        QueryString queryString;
+
+        if (!string.IsNullOrEmpty(token))
+        {
+            queryString = QueryString.Create("token", token);
+        }
+
+        return url + queryString;
+    }
+
     public string GetTenantUrl(ShellSettings tenantShellSettings, string originalPathBase, bool appendAdminArea = false)
     {
         var requestHostInfo = Context.Request.Host;
@@ -60,7 +80,7 @@
             <li class="hint text--uppercase">
                 <a asp-area="OrchardCore.Tenants" asp-controller="Admin" asp-action="Create" class="link--plain">
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7 5V0H5V5H0V7H5V12H7V7H12V5H7Z" fill="#6D6D6D"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7 5V0H5V5H0V7H5V12H7V7H12V5H7Z" fill="#6D6D6D" />
                     </svg> @T["Add New"]
                 </a>
             </li>
@@ -92,41 +112,41 @@
                                 break;
                         }
 
-                    <ul class="list list--horizontal list--horizontal-spaced">
-                        @if (tenant.State == TenantState.Running)
-                        {
-                            <li>
-                                <a href="@GetTenantUrl(tenant, originalPathBase)" class="link--plain">@T["View"]</a>
-                            </li>
-                            <li>
-                                <a href="@GetTenantUrl(tenant, originalPathBase, true)" class="link--plain">@T["Admin"]</a>
-                            </li>
-                        }
+                        <ul class="list list--horizontal list--horizontal-spaced">
+                            @if (tenant.State == TenantState.Running)
+                            {
+                                <li>
+                                    <a href="@GetTenantUrl(tenant, originalPathBase)" class="link--plain">@T["View"]</a>
+                                </li>
+                                <li>
+                                    <a href="@GetTenantUrl(tenant, originalPathBase, true)" class="link--plain">@T["Admin"]</a>
+                                </li>
+                            }
 
-                        <li>
-                            <a asp-area="OrchardCore.Tenants" asp-controller="Admin" asp-action="Edit" asp-route-id="@tenant.Name" class="link--plain">@T["Edit"]</a>
-                        </li>
-                        @if (tenant.Name != "Default" && tenant.State == TenantState.Running)
-                        {
                             <li>
-                                <a asp-area="OrchardCore.Tenants" asp-controller="Admin" asp-action="Disable" asp-route-id="@tenant.Name" class="link--plain">@T["Disable"]</a>
+                                <a asp-area="OrchardCore.Tenants" asp-controller="Admin" asp-action="Edit" asp-route-id="@tenant.Name" class="link--plain">@T["Edit"]</a>
                             </li>
-                        }
-                        @if (tenant.State == TenantState.Disabled)
-                        {
-                            <li>
-                                <a asp-area="OrchardCore.Tenants" asp-controller="Admin" asp-action="Enable" asp-route-id="@tenant.Name" class="link--plain">@T["Enable"]</a>
-                            </li>
-                        }
-                        @if (tenant.State == TenantState.Uninitialized)
-                        {
-                            <li>
-                                <a href="@GetTenantUrl(tenant, originalPathBase)" class="link--plain">@T["Setup"]</a>
-                            </li>
-                        }
+                            @if (tenant.Name != "Default" && tenant.State == TenantState.Running)
+                            {
+                                <li>
+                                    <a asp-area="OrchardCore.Tenants" asp-controller="Admin" asp-action="Disable" asp-route-id="@tenant.Name" class="link--plain">@T["Disable"]</a>
+                                </li>
+                            }
+                            @if (tenant.State == TenantState.Disabled)
+                            {
+                                <li>
+                                    <a asp-area="OrchardCore.Tenants" asp-controller="Admin" asp-action="Enable" asp-route-id="@tenant.Name" class="link--plain">@T["Enable"]</a>
+                                </li>
+                            }
+                            @if (tenant.State == TenantState.Uninitialized)
+                            {
+                                <li>
+                                    <a href="@GetTenantSetupUrl(tenant, originalPathBase)" class="link--plain">@T["Setup"]</a>
+                                </li>
+                            }
 
-                        <li><a asp-area="OrchardCore.Tenants" asp-controller="Admin" asp-action="Reload" asp-route-id="@tenant.Name" class="link--plain">@T["Reload"]</a></li>
-                    </ul>
+                            <li><a asp-area="OrchardCore.Tenants" asp-controller="Admin" asp-action="Reload" asp-route-id="@tenant.Name" class="link--plain">@T["Reload"]</a></li>
+                        </ul>
                     </div>
                 </li>
             }
