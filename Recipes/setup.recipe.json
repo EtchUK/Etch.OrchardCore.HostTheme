@@ -563,7 +563,7 @@
       "Values": [
         {
           "executionid": "Etch.OrchardCore.Widgets",
-          "name": "Create Content Definitions"
+          "name": "Create Common Widget Content Definitions"
         }
       ]
     }
