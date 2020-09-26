@@ -4,6 +4,6 @@ using OrchardCore.DisplayManagement.Manifest;
     Name = "Host Theme",
     Author = "Etch UK Ltd.",
     Website = "https://etchuk.com",
-    Version = "0.2.1",
+    Version = "0.2.2",
     Description = "Theme for host site."
 )]
