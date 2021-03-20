@@ -13,8 +13,8 @@
             document.createElement( "picture" );
         </script>
 
-		{% style src:"/Etch.OrchardCore.HostTheme/css/styles.css", append_version:"true" %}
-		{% script src:"/Etch.OrchardCore.HostTheme/js/scripts.js", append_version:"true", async: "true" %}
+		{% style src:"/Etch.OrchardCore.HostTheme/css/styles.css", at:"Head", append_version:"true" %}
+        {% script src:"/Etch.OrchardCore.HostTheme/js/scripts.js", at:"Head", append_version:"true", async: "true" %}
 
         {% resources type: "HeadScript" %}
         {% resources type: "HeadLink" %}
