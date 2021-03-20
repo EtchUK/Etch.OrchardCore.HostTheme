@@ -20,14 +20,7 @@
         var dataProtector = DataProtectionProvider.CreateProtector("Tokens").ToTimeLimitedDataProtector();
         var token = dataProtector.Protect(tenantShellSettings["Secret"], Clock.UtcNow.Add(new TimeSpan(24, 0, 0)));
 
-        QueryString queryString;
-
-        if (!string.IsNullOrEmpty(token))
-        {
-            queryString = QueryString.Create("token", token);
-        }
-
-        return url + queryString;
+        return !string.IsNullOrEmpty(token) ? url + QueryString.Create("token", token) : url;
     }
 
     public string GetTenantUrl(ShellSettings tenantShellSettings, string originalPathBase, bool appendAdminArea = false)
@@ -91,7 +84,9 @@
                 <li class="grid__item">
                     <div class="card">
                         <h3 class="card__title text--size-h1 margin--bottom-small" title="@tenant.Name">@tenant.Name</h3>
-                        <p class="hint text--ellipsis margin--bottom-large"><span title="@GetTenantHost(tenant)">@GetTenantHost(tenant)</span></p>
+                        <p class="hint text--ellipsis"><span title="@GetTenantHost(tenant)">@GetTenantHost(tenant)</span></p>
+
+                        <p>@tenant["Description"]</p>
 
                         @switch (tenant.State)
                         {
@@ -126,26 +121,13 @@
                             <li>
                                 <a asp-area="OrchardCore.Tenants" asp-controller="Admin" asp-action="Edit" asp-route-id="@tenant.Name" class="link--plain">@T["Edit"]</a>
                             </li>
-                            @if (tenant.Name != "Default" && tenant.State == TenantState.Running)
-                            {
-                                <li>
-                                    <a asp-area="OrchardCore.Tenants" asp-controller="Admin" asp-action="Disable" asp-route-id="@tenant.Name" class="link--plain">@T["Disable"]</a>
-                                </li>
-                            }
-                            @if (tenant.State == TenantState.Disabled)
-                            {
-                                <li>
-                                    <a asp-area="OrchardCore.Tenants" asp-controller="Admin" asp-action="Enable" asp-route-id="@tenant.Name" class="link--plain">@T["Enable"]</a>
-                                </li>
-                            }
+
                             @if (tenant.State == TenantState.Uninitialized)
                             {
                                 <li>
                                     <a href="@GetTenantSetupUrl(tenant, originalPathBase)" class="link--plain">@T["Setup"]</a>
                                 </li>
                             }
-
-                            <li><a asp-area="OrchardCore.Tenants" asp-controller="Admin" asp-action="Reload" asp-route-id="@tenant.Name" class="link--plain">@T["Reload"]</a></li>
                         </ul>
                     </div>
                 </li>
