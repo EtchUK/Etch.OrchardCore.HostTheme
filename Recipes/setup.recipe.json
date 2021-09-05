@@ -1,13 +1,18 @@
 {
-    "name": "Host",
-    "displayName": "Host",
-    "description": "Host site responsible for managing tenants.",
-    "author": "Etch UK Ltd.",
-    "website": "https://etchuk.com",
-    "version": "0.0.1",
-    "issetuprecipe": true,
-    "categories": ["default"],
-    "tags": ["developer", "default"],
+  "name": "Host",
+  "displayName": "Host",
+  "description": "Host site responsible for managing tenants.",
+  "author": "Etch UK Ltd.",
+  "website": "https://etchuk.com",
+  "version": "0.0.1",
+  "issetuprecipe": true,
+  "categories": [
+    "default"
+  ],
+  "tags": [
+    "developer",
+    "default"
+  ],
   "steps": [
     {
       "name": "Feature",
@@ -158,7 +163,10 @@
     {
       "name": "Settings",
       "LayerSettings": {
-        "Zones": [ "Header", "Footer" ]
+        "Zones": [
+          "Header",
+          "Footer"
+        ]
       }
     },
     {
@@ -393,10 +401,14 @@
           "Author": "[js: parameters('AdminUsername')]",
           "Banner": {
             "Logo": {
-              "Paths": [ "Logo/logo-play.svg" ]
+              "Paths": [
+                "Logo/logo-play.svg"
+              ]
             },
             "LogoSmall": {
-              "Paths": [ "Logo/logo-play.svg" ]
+              "Paths": [
+                "Logo/logo-play.svg"
+              ]
             },
             "LogoAlternateText": {
               "Text": "Logo for Etch Play"
@@ -563,7 +575,7 @@
       "Values": [
         {
           "executionid": "Etch.OrchardCore.Widgets",
-          "name": "Create Common Widget Content Definitions"
+          "name": "Widgets-ContentDefinitions"
         }
       ]
     }
