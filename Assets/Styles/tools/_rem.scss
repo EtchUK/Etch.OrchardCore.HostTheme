@@ -7,32 +7,31 @@
  * fallback.
  */
 
+@use 'sass:math';
+
 @function parseInt($n) {
-    @return $n / ($n * 0 + 1);
+    @return math.div($n, $n * 0 + 1);
 }
 
 @mixin rem($property, $values) {
-    $px : ();
+    $px: ();
     $rem: ();
 
     @each $value in $values {
-
         @if $value == 0 or $value == auto {
-            $px : append($px , $value);
+            $px: append($px, $value);
             $rem: append($rem, $value);
-        }
-
-        @else {
+        } @else {
             $unit: unit($value);
             $val: parseInt($value);
 
-            @if $unit == "px" {
-                $px : append($px,  $value);
-                $rem: append($rem, ($val / 10 + rem));
+            @if $unit == 'px' {
+                $px: append($px, $value);
+                $rem: append($rem, (math.div($val, 10) + rem));
             }
 
-            @if $unit == "rem" {
-                $px : append($px,  ($val * 10 + px));
+            @if $unit == 'rem' {
+                $px: append($px, ($val * 10 + px));
                 $rem: append($rem, $value);
             }
         }

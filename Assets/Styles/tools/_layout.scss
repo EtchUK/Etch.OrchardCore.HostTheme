@@ -11,7 +11,7 @@
     grid-gap: $layout-gap-master-small;
     grid-template-columns: repeat(6, 1fr);
     grid-auto-rows: minmax(auto, auto);
-    
+
     @include bp-min-width($bp-tablet) {
         grid-gap: $layout-gap-master;
         grid-template-columns: repeat(12, 1fr);

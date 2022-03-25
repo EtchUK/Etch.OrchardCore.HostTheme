@@ -5,9 +5,19 @@
  */
 
 .bg--color {
-    &-primary { background-color: $color-brand-primary; }
-    &-secondary { background-color: $color-brand-secondary; }
-    &-black { background-color: $color-black; }
-    &-grey { background-color: $color-grey-1; }
-    &-white { background-color: $color-white; }
+    &-primary {
+        background-color: $color-brand-primary;
+    }
+    &-secondary {
+        background-color: $color-brand-secondary;
+    }
+    &-black {
+        background-color: $color-black;
+    }
+    &-grey {
+        background-color: $color-grey-1;
+    }
+    &-white {
+        background-color: $color-white;
+    }
 }

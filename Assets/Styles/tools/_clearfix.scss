@@ -11,9 +11,9 @@
 /**
  * Adds micro clearfix to element.
  */
- @mixin clearfix() {
+@mixin clearfix() {
     &:after {
-        content: "";
+        content: '';
         display: table;
         clear: both;
     }

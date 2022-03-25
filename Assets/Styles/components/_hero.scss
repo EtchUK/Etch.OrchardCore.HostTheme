@@ -15,23 +15,22 @@
         width: 100%;
     }
 
-        &__title {
-        
-            color: $color-white;
+    &__title {
+        color: $color-white;
 
-            @include text-hero();
+        @include text-hero();
 
-            span {
-                padding: 0 $hero-title-padding-horizontal $hero-title-padding-bottom;
+        span {
+            padding: 0 $hero-title-padding-horizontal $hero-title-padding-bottom;
 
-                background-color: rgba($color-black, $hero-title-span-opacity);
-                box-decoration-break: clone;
-            }
+            background-color: rgba($color-black, $hero-title-span-opacity);
+            box-decoration-break: clone;
         }
+    }
 
-        &__btn {
-            @include rem(margin-left, $hero-title-padding-horizontal);
-        }
+    &__btn {
+        @include rem(margin-left, $hero-title-padding-horizontal);
+    }
 
     &__media {
         max-height: $hero-media-max-height;

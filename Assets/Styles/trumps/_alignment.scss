@@ -33,7 +33,7 @@
             @include rem(margin-right, $content-gutter);
         }
     }
-    
+
     &--right {
         @include bp-min-width($bp-tablet) {
             float: right;

@@ -28,7 +28,7 @@
  */
 
 @mixin target-edge() {
-    @supports (-ms-ime-align:auto) {
+    @supports (-ms-ime-align: auto) {
         @content;
     }
 }

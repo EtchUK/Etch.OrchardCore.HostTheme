@@ -7,5 +7,7 @@
 @mixin active-states() {
     &:hover,
     &:focus,
-    &:active { @content }
+    &:active {
+        @content;
+    }
 }
