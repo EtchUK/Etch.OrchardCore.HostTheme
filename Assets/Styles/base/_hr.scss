@@ -14,7 +14,7 @@ hr {
     margin-bottom: $spacing-default;
     border: 0;
     font-size: 0;
- 
+
     @include themify($themes) {
         background-color: themed('color.hrule');
 

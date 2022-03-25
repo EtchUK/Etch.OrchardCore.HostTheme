@@ -9,7 +9,7 @@ blockquote {
 
     margin: 0 0 $spacing-default 0;
 
-    @include text-blockquote();   
+    @include text-blockquote();
 
     @include bp-min-width($bp-tablet) {
         @include themify($themes) {

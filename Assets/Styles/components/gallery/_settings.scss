@@ -2,6 +2,8 @@
    #GALLERY/SETTINGS
    ========================================================================== */
 
+@use 'sass:math';
+
 $gallery-gutter: 2rem;
 $gallery-gutter-small: 1.5rem;
-$gallery-item-gap: $gallery-gutter / 2;
+$gallery-item-gap: math.div($gallery-gutter, 2);

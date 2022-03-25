@@ -4,7 +4,10 @@
 
 input {
     display: block;
-    @include rem(padding, $form-element-padding-vertical $form-element-padding-horizontal);
+    @include rem(
+        padding,
+        $form-element-padding-vertical $form-element-padding-horizontal
+    );
 
     border: 0;
 
@@ -16,7 +19,7 @@ input {
         @include focus-form-element;
     }
 
-    &[type=file] {
+    &[type='file'] {
         border: 0;
     }
 }

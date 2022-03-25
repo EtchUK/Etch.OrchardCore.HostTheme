@@ -1,10 +1,24 @@
+const path = require('path');
+
 const config = require('./webpack.config');
 
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-config.plugins.push(
-    new MiniCssExtractPlugin({
-        filename: '../css/[name].css',
+config[0].plugins.push(
+    new CleanWebpackPlugin({
+        cleanOnceBeforeBuildPatterns: [
+            path.join(process.cwd(), 'wwwroot/content'),
+            path.join(process.cwd(), 'wwwroot/fonts'),
+            path.join(process.cwd(), 'wwwroot/img'),
+            path.join(process.cwd(), 'wwwroot/js'),
+            path.join(process.cwd(), 'wwwroot/Theme.png'),
+        ],
+    })
+);
+
+config[1].plugins.push(
+    new CleanWebpackPlugin({
+        cleanOnceBeforeBuildPatterns: [path.join(process.cwd(), 'wwwroot/css')],
     })
 );
 

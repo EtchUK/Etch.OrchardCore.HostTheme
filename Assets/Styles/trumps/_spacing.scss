@@ -2,11 +2,10 @@
    #SPACING
    ========================================================================== */
 
-
 .margin {
     &--bottom {
         @include rem(margin-bottom, $spacing-default);
-    
+
         &-large {
             @include rem(margin-bottom, $spacing-large);
         }
@@ -22,7 +21,7 @@
 
     &--left {
         @include rem(margin-left, $spacing-default);
-    
+
         &-large {
             @include rem(margin-left, $spacing-large);
         }
@@ -42,7 +41,7 @@
 
     &--right {
         @include rem(margin-right, $spacing-default);
-    
+
         &-large {
             @include rem(margin-right, $spacing-large);
         }
@@ -62,7 +61,7 @@
 
     &--top {
         @include rem(margin-top, $spacing-default);
-    
+
         &-large {
             @include rem(margin-top, $spacing-large);
         }
@@ -80,7 +79,7 @@
 .padding {
     &--bottom {
         @include rem(padding-bottom, $spacing-default);
-    
+
         &-large {
             @include rem(padding-bottom, $spacing-large);
         }
@@ -96,7 +95,7 @@
 
     &--left {
         @include rem(padding-left, $spacing-default);
-    
+
         &-large {
             @include rem(padding-left, $spacing-large);
         }
@@ -116,7 +115,7 @@
 
     &--right {
         @include rem(padding-right, $spacing-default);
-    
+
         &-large {
             @include rem(padding-right, $spacing-large);
         }
@@ -136,7 +135,7 @@
 
     &--top {
         @include rem(padding-top, $spacing-default);
-    
+
         &-large {
             @include rem(padding-top, $spacing-large);
         }

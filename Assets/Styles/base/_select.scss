@@ -4,14 +4,17 @@
 
 select {
     display: block;
-    @include rem(padding, $form-element-padding-vertical $form-element-padding-horizontal);
+    @include rem(
+        padding,
+        $form-element-padding-vertical $form-element-padding-horizontal
+    );
     width: auto;
 
     @include themify($themes) {
         border: $form-border-size solid themed('color.hint');
     }
 
-    &:focus {           
+    &:focus {
         @include focus-form-element;
     }
 }

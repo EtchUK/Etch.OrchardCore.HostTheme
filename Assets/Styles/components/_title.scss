@@ -11,17 +11,17 @@
     @include rem(margin-bottom, $spacing-x-large);
 }
 
-    .title__heading {
-        margin-bottom: 0;
+.title__heading {
+    margin-bottom: 0;
 
-        @include themify($themes) {
-            @include rem(font-size, themed('fontSize.title'));
-            @include rem(line-height, themed('lineHeight.title'));
-        }
+    @include themify($themes) {
+        @include rem(font-size, themed('fontSize.title'));
+        @include rem(line-height, themed('lineHeight.title'));
     }
+}
 
-    .title__meta {
-        @include themify($themes) {
-            color: themed('color.hint');
-        }
+.title__meta {
+    @include themify($themes) {
+        color: themed('color.hint');
     }
+}

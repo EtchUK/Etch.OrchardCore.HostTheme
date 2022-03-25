@@ -28,11 +28,17 @@ $themes: map-merge(
                 'tableRowDark': #070f26,
                 'text': #070f26,
                 'validationError': #e20000,
-                'white': #fff
+                'white': #fff,
             ),
             'fontFamily': (
-                'default': ('Work Sans', sans-serif),
-                'heading': ('Manuale', sans-serif)
+                'default': (
+                    'Work Sans',
+                    sans-serif,
+                ),
+                'heading': (
+                    'Manuale',
+                    sans-serif,
+                ),
             ),
             'fontSize': (
                 'default': 1.6rem,
@@ -50,21 +56,21 @@ $themes: map-merge(
                     'h1': 3.6rem,
                     'h2': 3.2rem,
                     'h3': 2.4rem,
-                    'h4': 1.8rem
-                )
+                    'h4': 1.8rem,
+                ),
             ),
             'fontWeight': (
                 'default': 400,
-                'bold': 700
+                'bold': 700,
             ),
             'lineHeight': (
                 'default': 2.2rem,
                 'heading': 1.2,
                 'hero': 1.4,
                 'label': 1.9rem,
-                'title': 9.2rem
-            )
-        )
+                'title': 9.2rem,
+            ),
+        ),
     ),
     $themes
 );

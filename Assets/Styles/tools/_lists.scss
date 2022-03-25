@@ -16,7 +16,7 @@
 
 @mixin list-horizontal() {
     @include clearfix();
-    
+
     > li {
         display: inline-block;
         float: left;
