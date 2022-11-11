@@ -22,16 +22,17 @@
     <Compile Remove="BuildConfigs\**" />
     <EmbeddedResource Remove="BuildConfigs\**" />
     <None Remove="BuildConfigs\**" />
-    <PackageAssetFiles Remove="BuildConfigs\**" />
-    <Folder Include="BuildConfigs\" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Remove="azure-pipelines.yml" />
+    <EmbeddedResource Remove=".editorconfig" />
     <EmbeddedResource Remove=".gitignore" />
+    <EmbeddedResource Remove=".parcelrc" />
+    <EmbeddedResource Remove=".stylelintrc" />
+    <EmbeddedResource Remove=".prettierrc" />
+    <EmbeddedResource Remove="azure-pipelines.yml" />
     <EmbeddedResource Remove="package.json" />
     <EmbeddedResource Remove="package-lock.json" />
-    <EmbeddedResource Remove="prettierrc" />
     <EmbeddedResource Remove="README.md" />
   </ItemGroup>
 
@@ -54,6 +55,6 @@
   </ItemGroup>
 
   <Target Name="BuildStaticAssets" AfterTargets="PreBuildEvent" Condition="'$(Configuration)' == 'Debug'">
-    <Exec Command="npm run bundle:dev" />
+    <Exec Command="npm run build" />
   </Target>
 </Project>
