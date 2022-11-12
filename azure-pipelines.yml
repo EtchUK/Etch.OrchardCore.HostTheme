@@ -22,10 +22,17 @@ stages:
         pool:
           vmImage: 'windows-latest'
         steps:
-          - task: tmarkovski.projectversionasvariable.versionintovariable.projectversionasvariable@1
-            displayName: 'Get Project Version as variables from Etch.OrchardCore.HostTheme.csproj'
+          - task: replacetokens@5
             inputs:
-              path: Etch.OrchardCore.HostTheme.csproj
+              rootDirectory: "$(System.DefaultWorkingDirectory)"
+              targetFiles: |
+                "**/*Manifest.cs"
+                "**/*Etch.OrchardCore.HostTheme.csproj"
+              actionOnMissing: "fail"
+              tokenPrefix: "$("
+              tokenSuffix: ")"
+              writeBOM: false
+              encoding: "utf-8"
 
           - task: CmdLine@2
             displayName: 'Compile front-end assets'
@@ -46,8 +53,6 @@ stages:
             displayName: 'dotnet pack'
             inputs:
               command: pack
-              versioningScheme: byEnvVar
-              versionEnvVar: 'VERSION_MAJORMINORPATCH'
 
           - task: PublishPipelineArtifact@0
             displayName: 'Publish Pipeline Artifact'
