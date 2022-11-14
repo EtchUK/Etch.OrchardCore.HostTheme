@@ -22,6 +22,10 @@ stages:
         pool:
           vmImage: 'windows-latest'
         steps:
+          - script: |
+              echo ##vso[task.setvariable variable=VersionNumber;]$(Build.SourceBranchName)
+            condition: startsWith(variables['build.sourceBranch'], 'refs/tags/')
+            
           - task: replacetokens@5
             inputs:
               rootDirectory: "$(System.DefaultWorkingDirectory)"
