@@ -4,11 +4,11 @@ Theme for [Orchard Core](https://github.com/orchardcms/OrchardCore) to be used o
 
 ## Build Status
 
-[![NuGet](https://img.shields.io/nuget/v/Etch.OrchardCore.HostTheme.svg)](https://www.nuget.org/packages/Etch.OrchardCore.HostTheme)
+[![Build Status](https://secure.travis-ci.org/etchuk/Etch.OrchardCore.HostTheme.png?branch=master)](http://travis-ci.org/etchuk/Etch.OrchardCore.HostTheme) [![NuGet](https://img.shields.io/nuget/v/Etch.OrchardCore.HostTheme.svg)](https://www.nuget.org/packages/Etch.OrchardCore.HostTheme)
 
 ## Orchard Core Reference
 
-This module is referencing a stable build of Orchard Core ([`1.6.0`](https://www.nuget.org/packages/OrchardCore.Module.Targets/1.6.0)).
+This module is referencing a stable build of Orchard Core ([`1.7.2`](https://www.nuget.org/packages/OrchardCore.Module.Targets/1.7.2)).
 
 ## Installing
 
